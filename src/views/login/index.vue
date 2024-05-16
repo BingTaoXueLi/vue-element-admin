@@ -57,9 +57,9 @@
           <span>Password : any</span>
         </div>
 
-        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
+        <!-- <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
           Or connect with
-        </el-button>
+        </el-button> -->
       </div>
     </el-form>
 
@@ -70,6 +70,8 @@
       <br>
       <social-sign />
     </el-dialog>
+
+    <el-footer height="150px"><span><a target="_blank" :href="beianUrl">© 2024-2034 wzc3610.cn 版权所有</a></span></el-footer>
   </div>
 </template>
 
@@ -110,6 +112,11 @@ export default {
       showDialog: false,
       redirect: undefined,
       otherQuery: {}
+    }
+  },
+  computed: {
+    beianUrl() {
+      return 'https://beian.miit.gov.cn'
     }
   },
   watch: {
@@ -244,6 +251,8 @@ $cursor: #fff;
     border-radius: 5px;
     color: #454545;
   }
+  font-size: 14px;
+  color: $cursor;
 }
 </style>
 
@@ -315,9 +324,23 @@ $light_gray:#eee;
     bottom: 6px;
   }
 
+  .el-footer {
+    width: 100%;
+    // background-color: $bg;
+    padding-top: 50px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+  }
+
   @media only screen and (max-width: 470px) {
     .thirdparty-button {
       display: none;
+    }
+    .login-container {
+      .el-footer{
+        height: 100px !important;
+      }
     }
   }
 }
