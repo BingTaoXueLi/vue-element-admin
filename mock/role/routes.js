@@ -112,7 +112,18 @@ const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/chatRoom',
+    component: 'layout/Layout',
+    children: [
+      {
+        path: 'index',
+        component: 'views/chatRoom/index',
+        name: 'chatRoom',
+        meta: { title: 'chatRoom', icon: 'chatRoom1' }
+      }
+    ]
+  },
   {
     path: '/icon',
     component: 'layout/Layout',

@@ -170,7 +170,18 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/chatRoom',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/chatRoom/index'),
+        name: 'chatRoom',
+        meta: { title: 'chatRoom', icon: 'chatRoom1' }
+      }
+    ]
+  },
   {
     path: '/icon',
     component: Layout,
